@@ -18,7 +18,10 @@ setup(
     author = 'Gary Reynolds',
     author_email = 'gary@touch.asn.au',
     description = 'Client for the PIN payments API.',
-    install_requires = [],
+    install_requires = [
+        'anyjson',
+        'httplib2',
+    ],
     packages = ['pypin'],
     classifiers = [
         'Development Status :: 3 - Alpha',
