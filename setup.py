@@ -14,7 +14,7 @@ version = __import__("pypin").__version__
 setup(
     name = 'pypin',
     version = pep386(version),
-    url = 'http://bitbucket.org/goodtune/pypin',
+    url = 'https://github.com/goodtune/pypin',
     author = 'Gary Reynolds',
     author_email = 'gary@touch.asn.au',
     description = 'Client for the PIN payments API.',
