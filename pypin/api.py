@@ -37,3 +37,27 @@ class API(object):
                 logger.debug("{header}: {value}".format(header=h, value=v))
 
         return self._transform_content(content)
+
+    def create_charge(self, amount, description, email, ip_address, card_number,
+            card_expiry_month, card_expiry_year, card_cvc, card_name,
+            card_address_line1, card_address_city, card_address_postcode,
+            card_address_state, card_address_country):
+
+        data = {
+            'amount': amount,
+            'description': description,
+            'email': email,
+            'ip_address': ip_address,
+            'card[number]': card_number,
+            'card[expiry_month]': card_expiry_month,
+            'card[expiry_year]': card_expiry_year,
+            'card[cvc]': card_cvc,
+            'card[name]': card_name,
+            'card[address_line1]': card_address_line1,
+            'card[address_city]': card_address_city,
+            'card[address_postcode]': card_address_postcode,
+            'card[address_state]': card_address_state,
+            'card[address_country]': card_address_country,
+        }
+
+        return self._make_request('charges', data=data, method='POST')
