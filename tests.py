@@ -1,10 +1,7 @@
 import os
 import pypin
-import sys
 
-import unittest
-
-PYTHON_VERSION = tuple(sys.version_info)[:2]
+import unittest2 as unittest
 
 
 class SimpleTest(unittest.TestCase):
@@ -19,7 +16,6 @@ class SimpleTest(unittest.TestCase):
         """
         self.assertEqual(1 + 1, 2)
 
-    @unittest.skipIf(PYTHON_VERSION < (2, 7), 'Python 2.7 required.')
     def test_list_charges(self):
         charges = self.api.list_charges()
         self.assertIsInstance(charges, dict)
