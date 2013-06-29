@@ -38,6 +38,9 @@ class API(object):
 
         return self._transform_content(content)
 
+    def list_charges(self):
+        return self._make_request('charges', method='GET')
+
     def create_charge(self, amount, description, email, ip_address, card_number,
             card_expiry_month, card_expiry_year, card_cvc, card_name,
             card_address_line1, card_address_city, card_address_postcode,
