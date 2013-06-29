@@ -3,5 +3,11 @@ python:
   - "2.5"
   - "2.6"
   - "2.7"
+env:
+  global:
+  - secure: |-
+      PIRHsPfrF8L+5xpIEBxRdvFdUoSwIpEbAEIrqY259r1X9zv06o430rmKQGKs
+      +lbzuRceWOGJPWe9Y/UnNNgR3wmLv4FSonUC/kaS9F6E0+6JkXUt6zbierIt
+      AECn7MMRtvEkBdFDym7ZocBTkI/D8xYv6ZtFNdL8NfvEZZeBwKc=
 install: pip install -r requirements.txt --use-mirrors
 script: nosetests
