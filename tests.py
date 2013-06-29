@@ -1,9 +1,13 @@
 import os
 import pypin
+import sys
 
-from unittest import TestCase
+import unittest
 
-class SimpleTest(TestCase):
+PYTHON_VERSION = tuple(sys.version_info)[:2]
+
+
+class SimpleTest(unittest.TestCase):
 
     def setUp(self):
         api_key = os.environ.get('API_KEY', '')
@@ -15,6 +19,7 @@ class SimpleTest(TestCase):
         """
         self.assertEqual(1 + 1, 2)
 
+    @unittest.skipIf(PYTHON_VERSION < (2, 7), 'Python 2.7 required.')
     def test_list_charges(self):
         charges = self.api.list_charges()
         self.assertIsInstance(charges, dict)
